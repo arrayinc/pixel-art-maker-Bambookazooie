@@ -32,26 +32,26 @@ makeGrid(gridHeight, gridWidth);
 
 // Upon user's submitting height and width selections, callback function (inside method) calls makeGrid function.
 // But event method preventDefault() first intercepts the 'submit' event, which would normally submit the form and refresh the page, preventing makeGrid() from being processed
-sizePicker.addEventListener('submit', function (e) {
+sizePicker.addEventListener('submit', function(e) {
   e.preventDefault();
   makeGrid(gridHeight, gridWidth);
 });
-document.querySelector('.input-height').addEventListener('change', function (e) {
+document.querySelector('.input-height').addEventListener('change', function(e) {
   e.preventDefault();
   gridHeight = e.target.value;
-})
-document.querySelector('.input-width').addEventListener('change', function (e) {
+});
+document.querySelector('.input-width').addEventListener('change', function(e) {
   e.preventDefault();
   gridWidth = e.target.value;
-})
+});
 
 // Listens for mouse pointer press and release on grid. Changes value to true when pressed, but sets it back to false as soon as released
-pixelCanvas.addEventListener('mousedown', function (e) {
+pixelCanvas.addEventListener('mousedown', function(e) {
   down = true;
-  pixelCanvas.addEventListener('mouseup', function () {
+  pixelCanvas.addEventListener('mouseup', function() {
     down = false;
   });
-  pixelCanvas.addEventListener('mouseover', function (e) {
+  pixelCanvas.addEventListener('mouseover', function(e) {
     // 'color' defined here rather than globally so JS checks whether user has changed color with each new mouse press on cell
     const colorPickerJs = document.querySelector('.color-picker').value;
     // While mouse pointer is pressed and within grid boundaries, fills cell with selected color
@@ -65,7 +65,7 @@ pixelCanvas.addEventListener('mousedown', function (e) {
 });
 
 // Adds color-fill functionality. e.preventDefault(); intercepts page refresh on button click
-quickFill.addEventListener('click', function (e) {
+quickFill.addEventListener('click', function(e) {
   e.preventDefault();
   pixelCanvas.querySelectorAll('td').forEach(td => td.style.backgroundColor = colorPicked);
 });
@@ -76,18 +76,18 @@ pixelCanvas.addEventListener('dblclick', e => {
 });
 
 // Allows for drag and single-cell erasing upon clicking 'erase' button, code for double-click erase functionality (Without entering erase mode) is above
-eraseMode.addEventListener('click', function () {
+eraseMode.addEventListener('click', function() {
   // Enables drag erasing while in erase mode
-  pixelCanvas.addEventListener('mousedown', function (e) {
+  pixelCanvas.addEventListener('mousedown', function(e) {
     down = true;
-    pixelCanvas.addEventListener('mouseup', function () {
+    pixelCanvas.addEventListener('mouseup', function() {
       down = false;
     });
     // Ensures cells won't be erased if grid is left while pointer is held down
-    pixelCanvas.addEventListener('mouseleave', function () {
+    pixelCanvas.addEventListener('mouseleave', function() {
       down = false;
     });
-    pixelCanvas.addEventListener('mouseover', function (e) {
+    pixelCanvas.addEventListener('mouseover', function(e) {
       // While mouse pointer is pressed and within grid boundaries, empties cell contents
       if (down) {
         if (e.target.tagName === 'TD') {
@@ -97,23 +97,23 @@ eraseMode.addEventListener('click', function () {
     });
   });
   // Enables single-cell erase while in erase mode
-  pixelCanvas.addEventListener('mousedown', function (e) {
+  pixelCanvas.addEventListener('mousedown', function(e) {
     e.target.style.backgroundColor = null;
   });
 });
 
 // Allows user to return to (default) draw mode after using 'erase' button
-drawMode.addEventListener('click', function () {
-  pixelCanvas.addEventListener('mousedown', function (e) {
+drawMode.addEventListener('click', function() {
+  pixelCanvas.addEventListener('mousedown', function(e) {
     down = true;
-    pixelCanvas.addEventListener('mouseup', function () {
+    pixelCanvas.addEventListener('mouseup', function() {
       down = false;
     });
     // Ensures cells won't be colored if grid is left while pointer is held down
-    pixelCanvas.addEventListener('mouseleave', function () {
+    pixelCanvas.addEventListener('mouseleave', function() {
       down = false;
     });
-    pixelCanvas.addEventListener('mouseover', function (e) {
+    pixelCanvas.addEventListener('mouseover', function(e) {
       // While mouse pointer is pressed and within grid boundaries, fills cell with selected color
       if (down) {
         if (e.target.tagName === 'TD') {
@@ -123,48 +123,48 @@ drawMode.addEventListener('click', function () {
     });
   });
   // Enables single-cell coloring while in draw mode
-  pixelCanvas.addEventListener('mousedown', function (e) {
+  pixelCanvas.addEventListener('mousedown', function(e) {
     if (e.target.tagName !== 'TD') return;
     e.target.style.backgroundColor = colorPicked;
   });
 });
 
 // Allows selected color to change when using preset button colors and generated color picker
-colorPickerJs.addEventListener("change", function () {
+colorPickerJs.addEventListener("change", function() {
   colorPicked = colorPickerJs.value;
   brushColor.style.backgroundColor = colorPicked;
 });
 document
   .getElementById("button2")
-  .addEventListener("click", function () {
+  .addEventListener("click", function() {
     colorPicked = "#0000FF";
     colorPickerJs.value = colorPicked;
     brushColor.style.backgroundColor = colorPicked;
   });
 document
   .getElementById("button3")
-  .addEventListener("click", function () {
+  .addEventListener("click", function() {
     colorPicked = "#008000";
     colorPickerJs.value = colorPicked;
     brushColor.style.backgroundColor = colorPicked;
   });
 document
   .getElementById("button4")
-  .addEventListener("click", function () {
+  .addEventListener("click", function() {
     colorPicked = "#FFFF00";
     colorPickerJs.value = colorPicked;
     brushColor.style.backgroundColor = colorPicked;
   });
 document
   .getElementById("button5")
-  .addEventListener("click", function () {
+  .addEventListener("click", function() {
     colorPicked = "#FFA500";
     colorPickerJs.value = colorPicked;
     brushColor.style.backgroundColor = colorPicked;
   });
 document
   .getElementById("button6")
-  .addEventListener("click", function () {
+  .addEventListener("click", function() {
     colorPicked = "#FF0000";
     colorPickerJs.value = colorPicked;
     brushColor.style.backgroundColor = colorPicked;
@@ -203,3 +203,4 @@ function loadBtn() {
     loadGrid[i].style.backgroundColor = savedGridInfo.grid[i];
   }
 }
+
