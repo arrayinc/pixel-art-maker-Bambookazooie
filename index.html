@@ -1,29 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Pixel Art Maker</title>
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Pixel Art Maker</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
     <script defer src="script.js"></script>
-</head>
-<body>
-    <div class="row">
-        <div class="column">
-          
-        </div>
-        <div class="column">
+  </head>
+
+  <body>
+    <div class="col-sm-6">
+      <div class="row">
+        <div class="header">
+          <p>Paint a happy little picture!</p>
           <h1>Pixel Art Maker</h1>
-          <table class="pixel-canvas"></table>
-          <br>
         </div>
-
-        <div style="position: relative; left: 0; top: 0;">
-        <img src="images/92-927765_bob-ross-png-bob-ross-white-background-transparent.png" class="bob">
+        <div class="button">
+          <button
+            onclick="getRandomImage();"
+            class="btn btn-success btn-sm"
+            style="height: 2em"
+            type="button"
+          >
+            LET'S GET CRAZY
+          </button>
+        </div>
+        <div class="picturecontainer"></div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row1">
+        <div class="col-sm-7">
+          <div class="pick">
+            <form class="size-picker">
+              <h4>choose grid size</h4>
+              <input type="button" class="draw-mode" value="Draw" />
+              <input type="button" class="erase-mode" value="Erase" />
+              height:
+              <input
+                type="number"
+                class="input-height"
+                name="height"
+                min="1"
+                max="180"
+                value="80"
+              />
+              width:
+              <input
+                type="number"
+                class="input-width"
+                name="width"
+                min="1"
+                max="180"
+                value="80"
+              />
+              <input type="submit" class="submit-button" value="Submit" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fill">
+      <input type="button" class="quick-fill" value="Fill" />
+    </div>
+    <div class="palettecontainer">
+      <div class="brushcolor"></div>
+      <input type="color" class="color-picker" id="colorPicker" />
+      <p1>Select Color</p1>
+      <button id="button2"></button>
+      <p1>Blue</p1>
+      <button id="button3"></button>
+      <p1>Green</p1>
+      <div>
+        <button id="button4"></button>
+        <p1>Yellow</p1>
+      </div>
+      <div>
+        <button id="button5"></button>
+        <p1>Orange</p1>
+      </div>
+      <div>
+        <button id="button6"></button>
+        <p1>Red</p1>
+      </div>
     </div>
 
+    <div class="saveload">
+      <button onclick="saveBtn()" class="savebutton">Save</button>
+      <button onclick="loadBtn()" class="loadbutton">Load</button>
     </div>
-    
-</body>
+
+    <table class="pixel-canvas"></table>
+
+    <script src="designs.js"></script>
+  </body>
 </html>
