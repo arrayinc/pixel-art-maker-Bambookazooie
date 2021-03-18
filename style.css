@@ -55,6 +55,7 @@ p {
   background-color: rgb(20, 99, 17);
   text-transform: capitalize;
   border-style: outset;
+  height: 2em;
 }
 
 .picturecontainer {
@@ -138,16 +139,24 @@ p1 {
   background-color: rgba(0, 0, 0, 0.219);
 }
 
-.color-picker {
-  background-image: url(images/black.png);
+.color-picker,
+#button2,
+#button3,
+#button4,
+#button5,
+#button6 {
   background-repeat: no-repeat;
   background-size: 47px 28px;
   height: 30px;
   width: 48px;
   background-color: transparent;
+  border-color: transparent;
+}
+
+.color-picker {
+  background-image: url(images/black.png);
   margin-top: 18%;
   margin-left: 73%;
-  border-color: transparent;
 }
 
 .color-picker::-webkit-color-swatch {
@@ -156,62 +165,32 @@ p1 {
 
 #button2 {
   background-image: url(images/blue.png);
-  background-repeat: no-repeat;
-  background-size: 47px 28px;
-  height: 30px;
-  width: 48px;
-  background-color: transparent;
   margin-top: 0%;
   margin-left: 68%;
-  border-color: transparent;
 }
 
 #button3 {
   background-image: url(images/green.png);
-  background-repeat: no-repeat;
-  background-size: 47px 28px;
-  height: 30px;
-  width: 48px;
-  background-color: transparent;
   margin-top: -0.5%;
   margin-left: 60%;
-  border-color: transparent;
 }
 
 #button4 {
   background-image: url(images/yellow.png);
-  background-repeat: no-repeat;
-  background-size: 47px 28px;
-  height: 30px;
-  width: 48px;
-  background-color: transparent;
   margin-top: -1%;
   margin-left: 49%;
-  border-color: transparent;
 }
 
 #button5 {
   background-image: url(images/orange.png);
-  background-repeat: no-repeat;
-  background-size: 47px 28px;
-  height: 30px;
-  width: 48px;
-  background-color: transparent;
   margin-top: -1%;
   margin-left: 38%;
-  border-color: transparent;
 }
 
 #button6 {
   background-image: url(images/red.png);
-  background-repeat: no-repeat;
-  background-size: 47px 28px;
-  height: 30px;
-  width: 48px;
-  background-color: transparent;
   margin-top: -1.4%;
   margin-left: 27%;
-  border-color: transparent;
 }
 
 .color-picker:hover,

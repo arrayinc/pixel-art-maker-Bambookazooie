@@ -21,19 +21,12 @@
           <h1>Pixel Art Maker</h1>
         </div>
         <div class="button">
-          <button
-            onclick="getRandomImage();"
-            class="btn btn-success btn-sm"
-            style="height: 2em"
-            type="button"
-          >
-            LET'S GET CRAZY
-          </button>
+          <button class="btn btn-success btn-sm" type="button">LET'S GET CRAZY</button>
         </div>
         <div class="picturecontainer"></div>
       </div>
     </div>
-    <div class="container-fluid">
+    <section class="container-fluid">
       <div class="row1">
         <div class="col-sm-7">
           <div class="pick">
@@ -42,53 +35,39 @@
               <input type="button" class="draw-mode" value="Draw" />
               <input type="button" class="erase-mode" value="Erase" />
               height:
-              <input
-                type="number"
-                class="input-height"
-                name="height"
-                min="1"
-                max="180"
-                value="80"
-              />
+              <input type="number" class="input-height" name="height" min="1" max="180" value="80" />
               width:
-              <input
-                type="number"
-                class="input-width"
-                name="width"
-                min="1"
-                max="180"
-                value="80"
-              />
+              <input type="number" class="input-width" name="width" min="1" max="180" value="80" />
               <input type="submit" class="submit-button" value="Submit" />
             </form>
           </div>
         </div>
       </div>
-    </div>
+    </section>
     <div class="fill">
       <input type="button" class="quick-fill" value="Fill" />
     </div>
-    <div class="palettecontainer">
+    <section class="palettecontainer">
       <div class="brushcolor"></div>
       <input type="color" class="color-picker" id="colorPicker" />
       <p1>Select Color</p1>
-      <button id="button2"></button>
+      <button class="buttons" id="button2"></button>
       <p1>Blue</p1>
-      <button id="button3"></button>
+      <button class="buttons" id="button3"></button>
       <p1>Green</p1>
       <div>
-        <button id="button4"></button>
+        <button class="buttons" id="button4"></button>
         <p1>Yellow</p1>
       </div>
       <div>
-        <button id="button5"></button>
+        <button class="buttons" id="button5"></button>
         <p1>Orange</p1>
       </div>
       <div>
-        <button id="button6"></button>
+        <button class="buttons" id="button6"></button>
         <p1>Red</p1>
       </div>
-    </div>
+    </section>
 
     <div class="saveload">
       <button onclick="saveBtn()" class="savebutton">Save</button>
@@ -96,7 +75,5 @@
     </div>
 
     <table class="pixel-canvas"></table>
-
-    <script src="designs.js"></script>
   </body>
 </html>
