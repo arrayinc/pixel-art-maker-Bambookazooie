@@ -115,8 +115,7 @@ input[type="number"] {
 }
 
 .submit-button,
-.erase-mode,
-.draw-mode {
+.erase-mode {
   box-shadow: inset 1px 1px 0 0 rgb(166, 179, 238);
   background: linear-gradient(rgb(255, 125, 49) 5%, #ffeb78 100%);
   border-radius: 5px;
