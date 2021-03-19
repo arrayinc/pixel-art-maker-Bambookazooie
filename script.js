@@ -11,7 +11,7 @@ let gridHeight = document.querySelector('.input-height').value;
 let gridWidth = document.querySelector('.input-width').value;
 let buttonColors = {
   colors: ['#0000FF', '#008000', '#FFFF00', '#FFA500', '#FF0000']
-}
+};
 brushColor.style.backgroundColor = colorPicked;
 
 function makeGrid(gridHeight, gridWidth, gridArray) {
